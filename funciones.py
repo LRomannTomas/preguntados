@@ -6,14 +6,14 @@ from constantes import *
 def crear_lista_paralela(key:str,lista:list):
     '''
 Brief:
-    Crea una lista paralela extrayendo un valor específico (identificado por una clave) de cada diccionario en una lista de diccionarios.
+    Crea una lista paralela extrayendo un valor especifico (identificado por una clave) de cada diccionario en una lista de diccionarios.
 
-Parámetros:
-    - key (str): La clave que se utilizará para extraer el valor de cada diccionario en la lista.
-    - lista (list): La lista de diccionarios de la cual se extraerán los valores.
+Parametros:
+    - key (str): La clave que se utilizara para extraer el valor de cada diccionario en la lista.
+    - lista (list): La lista de diccionarios de la cual se extraeran los valores.
 
 Retorno:
-    lista_segun_key (list): Una nueva lista que contiene los valores extraídos de cada diccionario según la clave especificada.
+    lista_segun_key (list): Una nueva lista que contiene los valores extraidos de cada diccionario segun la clave especificada.
 '''
     lista_segun_key = []
     for elemento in lista:
@@ -25,13 +25,13 @@ Retorno:
 def renderizar_texto(texto:str,fuente:str,tamaño_fuente:int,color:tuple):
     '''
 Brief:
-    Renderiza un texto en una fuente, tamaño y color específicos utilizando la biblioteca Pygame.
+    Renderiza un texto en una fuente, tamaño y color especificos utilizando la biblioteca Pygame.
 
-Parámetros:
+Parametros:
     - texto (str): El texto que se desea renderizar.
-    - fuente (str): El nombre de la fuente que se utilizará para renderizar el texto.
+    - fuente (str): El nombre de la fuente que se utilizara para renderizar el texto.
     - tamaño_fuente (int): El tamaño de la fuente para el texto.
-    - color (tuple): Un tuple que representa el color en formato RGB (Red, Green, Blue) para el texto.
+    - color (tuple): Una tupla que representa el color para el texto.
 
 Retorno:
     mensaje_renderizado: El texto renderizado como una superficie de Pygame.
@@ -47,17 +47,17 @@ Retorno:
 def determinar_perimetro_click( posicion_click:list,left:int,right:int,top:int,bottom:int):
     '''
 Brief:
-    Determina si un punto de clic está dentro de un area definida por sus límites izquierdo, derecho, superior e inferior.
+    Determina si un punto de clic esta dentro de un area definida por sus limites izquierdo, derecho, superior e inferior.
 
-Parámetros:
+Parametros:
     - posicion_click (list): Una lista que contiene las coordenadas (x, y) del punto de clic que se desea verificar.
-    - left (int): La coordenada x del límite izquierdo del área.
-    - right (int): La coordenada x del límite derecho del área.
-    - top (int): La coordenada y del límite superior del área.
-    - bottom (int): La coordenada y del límite inferior del área.
+    - left (int): La coordenada x del limite izquierdo del area.
+    - right (int): La coordenada x del limite derecho del area.
+    - top (int): La coordenada y del limite superior del area.
+    - bottom (int): La coordenada y del limite inferior del area.
 
 Retorno:
-    True si el punto de clic está dentro del área rectangular, False en caso contrario.
+    True si el punto de click esta dentro del area rectangular, False en caso contrario.
 '''
     if (posicion_click[0] > left and posicion_click[0] < right) and (posicion_click[1] > top and posicion_click[1] < bottom):
         return True
@@ -68,13 +68,13 @@ Retorno:
 def ocultar_opcion(opcion:dict):
     '''
     Brief:
-        Oculta una opción en un menú, reemplazando su texto renderizado por un espacio en blanco.
+        Oculta una opcion en un menu, reemplazando su texto renderizado por un espacio en blanco.
 
-    Parámetros:
-        - opcion (dict): Un diccionario que representa una opción del menú y contiene su texto renderizado.
+    Parametros:
+        - opcion (dict): Un diccionario que representa una opcion del menu y contiene su texto renderizado.
 
     Retorno:
-        Esta función no retorna ningún valor directamente, pero modifica la opción proporcionada para ocultarla.
+        Esta funcion no retorna ningun valor directamente, pero modifica la opcion proporcionada para ocultarla.
     '''
     opcion["texto_renderizado"] = renderizar_texto("","Arial",20,COLOR_GRIS)
     
@@ -82,13 +82,13 @@ def ocultar_opcion(opcion:dict):
 def ocultar_opciones(opciones:dict):
     '''
     Brief:
-        Oculta varias opciones en un menú, reemplazando sus textos renderizados por espacios en blanco.
+        Oculta varias opciones en un menu, reemplazando sus textos renderizados por espacios en blanco.
 
-    Parámetros:
-        - opciones (dict): Un diccionario que contiene múltiples opciones de menú y sus textos renderizados.
+    Parametros:
+        - opciones (dict): Un diccionario que contiene multiples opciones de menu y sus textos renderizados.
 
     Retorno:
-        Esta función no retorna ningún valor directamente, pero modifica las opciones proporcionadas para ocultarlas.
+        Esta funcion no retorna ningun valor directamente, pero modifica las opciones proporcionadas para ocultarlas.
     '''
     for key in opciones:
         ocultar_opcion(opciones[key])
@@ -99,11 +99,11 @@ def cuadrado(pantalla):
     Brief:
         Dibuja un cuadrado en una superficie de pantalla.
 
-    Parámetros:
-        - pantalla (pygame.Surface): La superficie de pantalla en la que se dibujarán los cuadrados.
+    Parametros:
+        - pantalla (pygame.Surface): La superficie de pantalla en la que se dibujaran los cuadrados.
 
     Retorno:
-        Esta función no retorna ningún valor, ya que su objetivo es dibujar en la superficie proporcionada.
+        Esta funcion no retorna ningun valor, ya que su objetivo es dibujar en la superficie proporcionada.
     '''
     pygame.draw.rect(pantalla,COLOR_ROJO,(18,15,210,110))  #Remarco boton pregunta
     pygame.draw.rect(pantalla,COLOR_AZUL,(23,20,200,100))  #Boton pregunta
@@ -114,12 +114,12 @@ def ocultar_o_mostrar_elementos(diccionario:dict,visibilidad:bool):
     Brief:
         Permite ocultar o mostrar elementos representados en un diccionario cambiando su propiedad de visibilidad.
 
-    Parámetros:
+    Parametros:
         - diccionario (dict): Un diccionario que contiene elementos con propiedades de visibilidad.
         - visibilidad (bool): Un valor booleano que determina si los elementos deben ser visibles (True) u ocultos (False).
 
     Retorno:
-        Esta función no retorna ningún valor directamente, pero modifica el diccionario proporcionado para cambiar la visibilidad de sus elementos.
+        Esta funcion no retorna ningun valor directamente, pero modifica el diccionario proporcionado para cambiar la visibilidad de sus elementos.
     '''
     for key in diccionario:
         diccionario[key]["visibilidad"] = visibilidad
